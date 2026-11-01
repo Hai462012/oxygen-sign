@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build unsigned iOS app
         run: |
-          xcodebuild -project OxygenSign.xcodeproj -target OxygenSign -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          xcodebuild -project OxygenSign.xcodeproj -scheme OxygenSign -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
       - name: Pack IPA
         run: |
           mkdir -p Payload
